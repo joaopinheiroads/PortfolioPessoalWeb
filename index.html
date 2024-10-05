@@ -6,7 +6,6 @@
     <title>João Lucas Gomes Pinheiro</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="graphic.css">
-    
 </head>
 <body>
     <!-- Audio que será reproduzido ao abrir o site -->
@@ -14,12 +13,9 @@
 
     <div class="sidebar">
         <img src="imagens/perfil.jpg" alt="Perfil">
-
-        <!-- Botão "Início" logo abaixo da imagem -->
         <a href="#imagem" class="nav-link inicio-link">
             <i class="custom-icon" style="background-image: url('imagens/inicio.png');"></i> Início
         </a>
-
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link" href="#sobre-mim"><i class="custom-icon" style="background-image: url('imagens/eu.png');"></i> Sobre mim</a>
@@ -70,45 +66,7 @@
         </div>
     </div>
 
-    <script>
-        // Função para reproduzir o som ao carregar o site
-        document.addEventListener('DOMContentLoaded', function() {
-            var audio = document.getElementById('site-sound');
-            audio.play().catch(function(error) {
-                console.log('Autoplay bloqueado pelo navegador: ' + error);
-            });
-        });
-
-        const typingElement = document.getElementById('typing-effect');
-        const text = 'Seja bem-vindo!';
-        let index = 0;
-        let isTyping = true;
-
-        function typeEffect() {
-            if (isTyping) {
-                if (index < text.length) {
-                    typingElement.textContent += text.charAt(index);
-                    index++;
-                    setTimeout(typeEffect, 100);
-                } else {
-                    isTyping = false;
-                    setTimeout(typeEffect, 1000);
-                }
-            } else {
-                if (index > 0) {
-                    typingElement.textContent = text.substring(0, index - 1);
-                    index--;
-                    setTimeout(typeEffect, 50);
-                } else {
-                    isTyping = true;
-                    setTimeout(typeEffect, 1000);
-                }
-            }
-        }
-
-        typeEffect();
-    </script>
-
+    <script src="script.js"></script> <!-- Linkando o JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
